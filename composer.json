@@ -1,0 +1,25 @@
+{
+  "name": "phpdevcommunity/php-session",
+  "description": "PHP Session is a PHP library that optimizes session management, utilizing PHP's native session handling mechanisms for enhanced security and efficiency.",
+  "type": "library",
+  "minimum-stability": "alpha",
+  "require": {
+    "php": ">=7.4"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "F. Michel",
+      "homepage": "https://www.phpdevcommunity.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PhpDevCommunity\\Session\\": "src",
+      "Test\\PhpDevCommunity\\Session\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpdevcommunity/unitester": "^0.1.0@alpha"
+  }
+}
