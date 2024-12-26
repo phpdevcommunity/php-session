@@ -28,6 +28,10 @@ class NativeSessionStorage implements SessionStorageInterface
     public function __construct(array $options = [])
     {
         if (session_status() === PHP_SESSION_NONE) {
+            if (isset($options['save_path']) && !is_dir($options['save_path'])) {
+//                var_dump($options['save_path']);
+                throw new \RuntimeException(sprintf('Session save path "%s" does not exist.', $options['save_path']));
+            }
             if (!session_start($options)) {
                 throw new \RuntimeException('Failed to start the session.');
             }

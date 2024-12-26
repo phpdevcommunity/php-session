@@ -15,10 +15,17 @@ final class NativeSessionTest extends TestCase
     protected function tearDown(): void
     {
         $_SESSION = [];
+        session_destroy();
     }
 
     protected function execute(): void
     {
+        $this->expectException(\RuntimeException::class, function () {
+            new NativeSessionStorage([
+                'save_path' => '/tmp/testnotfound',
+            ]);
+        });
+
         $session = new NativeSessionStorage();
         $session['username'] = 'myName';
         $this->assertTrue($session->has('username'));
