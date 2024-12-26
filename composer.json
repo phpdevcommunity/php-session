@@ -4,7 +4,8 @@
   "type": "library",
   "minimum-stability": "alpha",
   "require": {
-    "php": ">=7.4"
+    "php": ">=7.4",
+    "phpdevcommunity/michel-package-starter": "^1.0"
   },
   "license": "MIT",
   "authors": [
